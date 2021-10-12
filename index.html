@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        function convertir() {
+            var valore = parseInt(document.getElementById("valor").value);
+            var resultado = 0;
+            var metro = 100;
+            var pulgada = 2.54;
+                if (document.getElementById("metros").checked){
+                    resultado = valore / metro;
+                    swal("El resultado es:" + resultado.toFixed(2) + " metros");
+        }
+                else if(document.getElementById("pulgadas").checked){
+                    resultado = valore / pulgada;
+                    swal("El resultado es :" + resultado.toFixed(2) + " pulgadas");
+        }
+                else{
+                    swal('Tienes que completar los requirimientos')
+        }
+    }
+    </script>
+    <title>Convierte unidades</title>
+</head>
+<body>
+    <h1>Convierte unidades de cm a metros y de metros a cm</h1>
+    <main>
+        <section>
+            <form class="formulario">
+                <h2>Selecciona la unidad</h2>
+                <input type="radio" name="cambio" id="metros">
+                <p>METROS</p> 
+                <input type="radio" name="cambio" id="pulgadas">
+                <p>PULGADAS</p>
+                <p>Ingrese la cantidad de CM:</p>
+                <input type="number" id="valor" min="1" max="100000">
+                <input type="button" id="cotizador" value="convertir" onclick="convertir()">
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
